@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "blog-video-game"
+    }
+  },
+  "defaultProject": "blog-video-game",
+  "cli": {
+    "analytics": "ee4d09dc-8532-4558-af19-01efb8d4a386"
+  }
 }
