@@ -10,6 +10,10 @@ import { ArticleService } from './services/article.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ArticlesFilterComponent } from './articles-filter/articles-filter.component';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
+import { GenreService } from './services/genre.service';
+import { ArticleTypeService } from './services/article-type.service';
+import { PlatformService } from './services/platform.service';
+import { VideoGameService } from './services/video-game.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,11 @@ import { ArticlesListComponent } from './articles-list/articles-list.component';
     HttpClientModule
   ],
   providers: [
-    ArticleService
+    ArticleTypeService,
+    ArticleService,
+    GenreService,
+    PlatformService,
+    VideoGameService
   ],
   bootstrap: [AppComponent]
 })
