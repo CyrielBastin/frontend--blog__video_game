@@ -7,7 +7,7 @@ import { ArticleType } from '../model/article-type'
 export class ArticleTypeService
 {
     private port = 8080
-    private article_type_url = `http://localhost:${this.port}/REST/types/`
+    private article_type_url = `http://localhost:${this.port}/REST/article-types/`
 
     constructor (
         private http: HttpClient

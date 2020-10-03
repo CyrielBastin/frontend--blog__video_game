@@ -5,10 +5,9 @@
                 Type
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">News</a>
-                <a class="dropdown-item" href="#">Review</a>
-                <a class="dropdown-item" href="#">Editorial</a>
-                <a class="dropdown-item" href="#">Rumors</a>
+                <a *ngFor="let type of list_article_types;" class="dropdown-item" href="#">
+                    {{ type.type }}
+                </a>
             </div>
         </div>
     </div>
@@ -18,10 +17,9 @@
                 Game
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Overwatch</a>
-                <a class="dropdown-item" href="#">Assassin's Creed Odyssey</a>
-                <a class="dropdown-item" href="#">The Sims 4</a>
-                <a class="dropdown-item" href="#">Human: Fall Flat</a>
+                <a *ngFor="let game of list_video_games;" class="dropdown-item" href="#">
+                    {{ game.name }}
+                </a>
             </div>
         </div>
     </div>
@@ -31,10 +29,9 @@
                 Platform
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Steam</a>
-                <a class="dropdown-item" href="#">Battle.net</a>
-                <a class="dropdown-item" href="#">Origin</a>
-                <a class="dropdown-item" href="#">Indies</a>
+                <a *ngFor="let platform of list_platforms;" class="dropdown-item" href="#">
+                    {{ platform.name }}
+                </a>
             </div>
         </div>
     </div>
@@ -44,10 +41,9 @@
                 Genre
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Stealth</a>
-                <a class="dropdown-item" href="#">Simulation</a>
-                <a class="dropdown-item" href="#">Hack and slash</a>
-                <a class="dropdown-item" href="#">Puzzle</a>
+                <a *ngFor="let genre of list_genres;" class="dropdown-item" href="#">
+                    {{ genre.name }}
+                </a>
             </div>
         </div>
     </div>
