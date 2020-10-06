@@ -18,25 +18,31 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a *ngFor="let game of list_video_games;" class="dropdown-item" href="#">
-                    {{ game.name }}
+                    <div class="media">
+                        <img src="../../assets/images/video_game/{{ game.image }}.jpg" alt="game's image" class="mr-3 px-40">
+                        <div class="media-body">{{ game.name }}</div>
+                    </div>
                 </a>
             </div>
         </div>
     </div>
     <div class="col-2">
-                <div class="dropdown">
+        <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Platform
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a *ngFor="let platform of list_platforms;" class="dropdown-item" href="#">
-                    {{ platform.name }}
+                <a *ngFor="let platform of list_platforms" href="#" class="dropdown-item">
+                    <div class="media">
+                        <img class="mr-3 px-40" src="../../assets/images/platform/{{ platform.image }}.png" alt="platform's image">
+                        <div class="media-body">{{ platform.name }}</div>
+                    </div>
                 </a>
             </div>
         </div>
     </div>
     <div class="col-2">
-                <div class="dropdown">
+        <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Genre
             </button>
@@ -48,3 +54,13 @@
         </div>
     </div>
 </div>
+
+<!--
+<div class="media">
+  <img src="..." class="mr-3" alt="...">
+  <div class="media-body">
+    <h5 class="mt-0">Media heading</h5>
+    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+  </div>
+</div>
+-->
