@@ -7,7 +7,7 @@ import { ArticleType } from '../model/article-type'
 export class ArticleTypeService
 {
     private port = 8080
-    private article_type_url = `http://localhost:${this.port}/REST/article-types/`
+    private article_type_url = `http://localhost:${this.port}/REST/article-types`
 
     constructor (
         private http: HttpClient
@@ -17,5 +17,11 @@ export class ArticleTypeService
     {
         return this.http
                    .get<Array<ArticleType>>(this.article_type_url)
+    }
+
+    public findOneById (id: number): Observable<ArticleType>
+    {
+        return this.http
+                   .get<ArticleType>(`${this.article_type_url}/${id}`)
     }
 }

@@ -1,0 +1,33 @@
+$size: 100px;
+
+.px-100 {
+    width: $size;
+    max-width: $size;
+    height: $size;
+    max-height: $size;
+}
+
+.border-grey {
+    border: 1px solid grey;
+}
+
+.header {
+    position: relative;
+
+    h5 {
+        max-width: 500px;
+    }
+}
+
+.header-top {
+    display: flex;
+
+    .posted-at {
+        position: absolute;
+        right: 5px;
+    }
+}
+
+.px-18 {
+    font-size: 18px;
+}

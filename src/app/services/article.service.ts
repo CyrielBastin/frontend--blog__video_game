@@ -7,7 +7,7 @@ import { Article } from '../model/article'
 export class ArticleService
 {
     private port = 8080
-    private article_url = `http://localhost:${this.port}/REST/articles/`
+    private article_url = `http://localhost:${this.port}/REST/articles`
 
     constructor (
         private http: HttpClient
@@ -17,5 +17,11 @@ export class ArticleService
     {
         return this.http
                    .get<Array<Article>>(this.article_url)
+    }
+
+    public findAllByPostedAtDesc (): Observable<Array<Article>>
+    {
+        return this.http
+                   .get<Array<Article>>(`${this.article_url}/desc`)
     }
 }

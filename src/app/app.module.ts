@@ -14,6 +14,7 @@ import { GenreService } from './services/genre.service';
 import { ArticleTypeService } from './services/article-type.service';
 import { PlatformService } from './services/platform.service';
 import { VideoGameService } from './services/video-game.service';
+import { ArticlesListArticleComponent } from './articles-list-article/articles-list-article.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { VideoGameService } from './services/video-game.service';
     HomeContentComponent,
     ArticlesPageComponent,
     ArticlesFilterComponent,
-    ArticlesListComponent
+    ArticlesListComponent,
+    ArticlesListArticleComponent
   ],
   imports: [
     BrowserModule,

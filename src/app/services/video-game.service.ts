@@ -7,7 +7,7 @@ import { VideoGame } from '../model/video-game'
 export class VideoGameService
 {
     private port = 8080
-    private video_game_url = `http://localhost:${this.port}/REST/video-games/`
+    private video_game_url = `http://localhost:${this.port}/REST/video-games`
 
     constructor (
         private http: HttpClient
@@ -17,5 +17,11 @@ export class VideoGameService
     {
         return this.http
                    .get<Array<VideoGame>>(this.video_game_url)
+    }
+
+    public findOneById (id: number): Observable<VideoGame>
+    {
+        return this.http
+                   .get<VideoGame>(`${this.video_game_url}/${id}`)
     }
 }

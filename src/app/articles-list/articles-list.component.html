@@ -1,1 +1,12 @@
-<p>articles-list works!</p>
+<div class="list-articles">
+    <div *ngFor="let article of list_articles;" class="margin-bottom-50 max_h-150">
+        <app-articles-list-article 
+            [id]="article.id" 
+            [title]="article.title" 
+            [postedAt]="article.postedAt" 
+            [content]="article.content"
+            [videoGameId]="article.videoGameId" 
+            [articleTypeId]="article.articleTypeId">
+        </app-articles-list-article>
+    </div>
+</div>
