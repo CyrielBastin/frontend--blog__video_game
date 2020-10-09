@@ -13,7 +13,7 @@ export class GenreService
         private http: HttpClient
     ) {}
 
-    public findAll (): Observable<Array<Genre>>
+    public getAll (): Observable<Array<Genre>>
     {
         return this.http
                    .get<Array<Genre>>(this.genre_url)

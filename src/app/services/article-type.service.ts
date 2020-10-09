@@ -13,13 +13,13 @@ export class ArticleTypeService
         private http: HttpClient
     ) {}
 
-    public findAll (): Observable<Array<ArticleType>>
+    public getAll (): Observable<Array<ArticleType>>
     {
         return this.http
                    .get<Array<ArticleType>>(this.article_type_url)
     }
 
-    public findOneById (id: number): Observable<ArticleType>
+    public getOneById (id: number): Observable<ArticleType>
     {
         return this.http
                    .get<ArticleType>(`${this.article_type_url}/${id}`)

@@ -13,7 +13,7 @@ export class PlatformService
         private http: HttpClient
     ) {}
 
-    public findAll (): Observable<Array<Platform>>
+    public getAll (): Observable<Array<Platform>>
     {
         return this.http
                    .get<Array<Platform>>(this.platform_url)

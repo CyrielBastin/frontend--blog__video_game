@@ -18,7 +18,7 @@ export class ArticlesListComponent implements OnInit {
   ngOnInit(): void
   {
     this.article_service
-        .findAllByPostedAtDesc()
+        .getAllByPostedAtDesc()
         .subscribe(
           (datas) => { this.list_articles = datas }
         )

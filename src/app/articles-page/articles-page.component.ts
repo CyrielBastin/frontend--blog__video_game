@@ -18,7 +18,7 @@ export class ArticlesPageComponent implements OnInit {
   ngOnInit(): void
   {
     this.article_service
-        .findAll()
+        .getAll()
         .subscribe(
           (datas) => {
             this.list_articles = datas

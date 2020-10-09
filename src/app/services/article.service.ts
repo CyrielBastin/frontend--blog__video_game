@@ -13,15 +13,21 @@ export class ArticleService
         private http: HttpClient
     ) {}
 
-    public findAll (): Observable<Array<Article>>
+    public getAll (): Observable<Array<Article>>
     {
         return this.http
                    .get<Array<Article>>(this.article_url)
     }
 
-    public findAllByPostedAtDesc (): Observable<Array<Article>>
+    public getAllByPostedAtDesc (): Observable<Array<Article>>
     {
         return this.http
                    .get<Array<Article>>(`${this.article_url}/desc`)
+    }
+
+    public getOneById (id: number): Observable<Article>
+    {
+        return this.http
+                   .get<Article>(`${this.article_url}/${id}`)
     }
 }

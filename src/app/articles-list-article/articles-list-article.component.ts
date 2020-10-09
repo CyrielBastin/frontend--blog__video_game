@@ -26,12 +26,12 @@ export class ArticlesListArticleComponent implements OnInit {
   ngOnInit (): void
   {
     this.video_game_service
-        .findOneById(this.videoGameId)
+        .getOneById(this.videoGameId)
         .subscribe(
           (datas) => { this.image = datas.image }
         )
     this.article_type_service
-        .findOneById(this.articleTypeId)
+        .getOneById(this.articleTypeId)
         .subscribe(
           ((datas) => { this.type = datas.type })
         )

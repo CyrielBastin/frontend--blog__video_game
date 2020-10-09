@@ -7,6 +7,10 @@ $size: 100px;
     max-height: $size;
 }
 
+a {
+    color: black;
+}
+
 .border-grey {
     border: 1px solid grey;
 }
@@ -25,6 +29,7 @@ $size: 100px;
     .posted-at {
         position: absolute;
         right: 5px;
+        color: grey;
     }
 }
 

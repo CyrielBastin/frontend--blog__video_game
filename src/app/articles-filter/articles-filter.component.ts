@@ -29,9 +29,9 @@ export class ArticlesFilterComponent implements OnInit {
 
   ngOnInit(): void
   {
-    this.article_type_service.findAll().subscribe(datas => { this.list_article_types = datas })
-    this.video_game_service.findAll().subscribe(datas => { this.list_video_games = datas })
-    this.platform_service.findAll().subscribe(datas => { this.list_platforms = datas })
-    this.genre_service.findAll().subscribe(datas => { this.list_genres = datas })
+    this.article_type_service.getAll().subscribe(datas => { this.list_article_types = datas })
+    this.video_game_service.getAll().subscribe(datas => { this.list_video_games = datas })
+    this.platform_service.getAll().subscribe(datas => { this.list_platforms = datas })
+    this.genre_service.getAll().subscribe(datas => { this.list_genres = datas })
   }
 }

@@ -13,13 +13,13 @@ export class VideoGameService
         private http: HttpClient
     ) {}
 
-    public findAll (): Observable<Array<VideoGame>>
+    public getAll (): Observable<Array<VideoGame>>
     {
         return this.http
                    .get<Array<VideoGame>>(this.video_game_url)
     }
 
-    public findOneById (id: number): Observable<VideoGame>
+    public getOneById (id: number): Observable<VideoGame>
     {
         return this.http
                    .get<VideoGame>(`${this.video_game_url}/${id}`)
