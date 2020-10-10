@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http'
 import { Injectable } from '@angular/core'
 import { Observable } from 'rxjs'
 import { Article } from '../model/article'
+import { Commentary } from '../model/commentary'
 
 @Injectable()
 export class ArticleService
@@ -29,5 +30,11 @@ export class ArticleService
     {
         return this.http
                    .get<Article>(`${this.article_url}/${id}`)
+    }
+
+    public getAllCommentariesByArticleIdDesc (id: number): Observable<Array<Commentary>>
+    {
+        return this.http
+                   .get<Array<Commentary>>(`${this.article_url}/${id}/commentaries/desc`)
     }
 }

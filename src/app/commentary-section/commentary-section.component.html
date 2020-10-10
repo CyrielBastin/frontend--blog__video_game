@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="grey-line"></div>
+    <div *ngFor="let comment of list_commentaries;" class="media mb-5">
+        <img class="mr-3 px-60" src="../../assets/images/video_game/{{ comment['user']['avatar'] }}.jpg" alt="avatar's image">
+        <div class="media-body">
+            <div class="body-header">
+                <h5 class="mt-0 pink-darken">{{ comment['user']['username'] }}</h5>
+                <div class="posted_at">{{ comment.postedAt | date: 'dd MMMM yyyy' }} at {{ comment.postedAt | date: 'HH:mm' }}</div>
+            </div>
+            {{ comment.comment }}
+        </div>
+    </div>
+</div>

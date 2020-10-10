@@ -16,6 +16,8 @@ import { PlatformService } from './services/platform.service';
 import { VideoGameService } from './services/video-game.service';
 import { ArticlesListArticleComponent } from './articles-list-article/articles-list-article.component';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
+import { CommentarySectionComponent } from './commentary-section/commentary-section.component';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
     ArticlesFilterComponent,
     ArticlesListComponent,
     ArticlesListArticleComponent,
-    ArticleDetailsComponent
+    ArticleDetailsComponent,
+    CommentarySectionComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,8 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
     ArticleService,
     GenreService,
     PlatformService,
-    VideoGameService
+    VideoGameService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
