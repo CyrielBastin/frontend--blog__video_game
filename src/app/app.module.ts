@@ -18,6 +18,7 @@ import { ArticlesListArticleComponent } from './articles-list-article/articles-l
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { CommentarySectionComponent } from './commentary-section/commentary-section.component';
 import { UserService } from './services/user.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UserService } from './services/user.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [
     ArticleTypeService,

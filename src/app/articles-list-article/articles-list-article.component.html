@@ -1,22 +1,32 @@
-<!-- <a [routerLink]="['articles', { 'id': id }]"> -->
-<a [routerLink]="[id]">
-<div class="media border-grey">
-    <img src="../../assets/images/video_game/{{ image }}.jpg" class="mr-3 px-100" alt="video game's image">
-    <div class="media-body">
-        <div class="header">
-            <div class="header-top">
-                <h5 class="mt-0">{{ title }}</h5>
-                <div class="posted-at">
-                    -- posted on the {{ postedAt | date: 'dd MMMM yyyy' }}
+<div class="row">
+    <div class="col-11">
+        <!-- <a [routerLink]="['articles', { 'id': id }]"> -->
+        <a [routerLink]="[id]">
+        <div class="media border-grey">
+            <img src="../../assets/images/video_game/{{ image }}.jpg" class="mr-3 px-100" alt="video game's image">
+            <div class="media-body">
+                <div class="header">
+                    <div class="header-top">
+                        <h5 class="mt-0">{{ title }}</h5>
+                        <div class="posted-at">
+                            -- posted on the {{ postedAt | date: 'dd MMMM yyyy' }}
+                        </div>
+                    </div>
+                    <div class="header-down">
+                        <span [class]="getType()">
+                            {{ type }}
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div class="header-down">
-                <span [class]="getType()">
-                    {{ type }}
-                </span>
+                <p class="mb-0">{{ content }}</p>
             </div>
         </div>
-        <p class="mb-0">{{ content }}</p>
+        </a>
+    </div>
+    <div class="col-1">
+        <div class="control-panel">
+            <div class="edit">Edit</div>
+            <div class="delete">Delete</div>
+        </div>
     </div>
 </div>
-</a>
