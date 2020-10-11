@@ -1,5 +1,13 @@
 <div class="container">
     <div class="grey-line"></div>
+        <form style="margin-bottom: 70px;">
+        <div class="form-group">
+            <label for="commentInput">Leave a comment :</label>
+            <textarea name="user_comment" id="commentInput" cols="30" rows="3" class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    <!-- User's commentaries -->
     <div *ngFor="let comment of list_commentaries;" class="media mb-5">
         <img class="mr-3 px-60" src="../../assets/images/video_game/{{ comment['user']['avatar'] }}.jpg" alt="avatar's image">
         <div class="media-body">
