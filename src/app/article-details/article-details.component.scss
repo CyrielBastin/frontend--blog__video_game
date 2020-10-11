@@ -19,6 +19,17 @@ $px: 300px;
     margin-bottom: 40px;
 }
 
+.btns-edit_and_del {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+
+    button {
+        font-size: 24px;
+        width: 150px;
+    }
+}
+
 .title {
     font-size: 30px;
     text-decoration: underline;

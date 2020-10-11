@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ArticleTypeService } from '../services/article-type.service';
 import { VideoGameService } from '../services/video-game.service';
+import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-articles-list-article',
@@ -17,6 +18,11 @@ export class ArticlesListArticleComponent implements OnInit {
   @Input() articleTypeId: number
   image: string
   type: string
+  // icon for edit
+  fa_pencil_alt = faPencilAlt
+  // icon for delete
+  fa_times = faTimes
+
 
   constructor (
     private video_game_service: VideoGameService,
