@@ -21,6 +21,7 @@ import { UserService } from './services/user.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ArticleNewOrEditComponent } from './article-new-or-edit/article-new-or-edit.component';
 import { FormsModule } from '@angular/forms';
+import { RefreshArticlesComponent } from './refresh-articles/refresh-articles.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     ArticlesListArticleComponent,
     ArticleDetailsComponent,
     CommentarySectionComponent,
-    ArticleNewOrEditComponent
+    ArticleNewOrEditComponent,
+    RefreshArticlesComponent
   ],
   imports: [
     BrowserModule,

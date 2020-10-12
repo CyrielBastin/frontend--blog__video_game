@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from '../model/article';
 import { ArticleTypeService } from '../services/article-type.service';
 import { ArticleService } from '../services/article.service';
@@ -20,7 +20,8 @@ export class ArticleDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private article_service: ArticleService,
     private article_type_service: ArticleTypeService,
-    private video_game_service: VideoGameService
+    private video_game_service: VideoGameService,
+    private router: Router
   ) {}
 
   ngOnInit (): void
@@ -61,4 +62,8 @@ export class ArticleDetailsComponent implements OnInit {
     }
   }
 
+  onDelete (id: number)
+  {
+    this.article_service.deleteArticle(id).subscribe(result => this.router.navigate(['/articles']))
+  }
 }

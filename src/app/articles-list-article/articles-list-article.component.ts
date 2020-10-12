@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ArticleTypeService } from '../services/article-type.service';
 import { VideoGameService } from '../services/video-game.service';
 import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { ArticleService } from '../services/article.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-articles-list-article',
@@ -26,7 +28,9 @@ export class ArticlesListArticleComponent implements OnInit {
 
   constructor (
     private video_game_service: VideoGameService,
-    private article_type_service: ArticleTypeService
+    private article_type_service: ArticleTypeService,
+    private article_service: ArticleService,
+    private router: Router
   ) {}
 
   ngOnInit (): void
@@ -54,5 +58,15 @@ export class ArticlesListArticleComponent implements OnInit {
       case 'Editorial': return `${badge} badge-info ${px}`
       case 'Rumors': return `${badge} badge-warning ${px}`
     }
+  }
+
+  onDelete (id: number)
+  {
+    this.article_service.deleteArticle(id).subscribe(result => this.refreshArticles())
+  }
+
+  refreshArticles ()
+  {
+    this.router.navigate(['/refresh'])
   }
 }

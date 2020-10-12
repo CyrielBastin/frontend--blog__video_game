@@ -28,7 +28,9 @@
             <a routerLink="/articles/edit/{{ id }}">
             <div class="edit">Edit <fa-icon [icon]="fa_pencil_alt" style="color: green;"></fa-icon></div>
             </a>
-            <div class="delete" style="margin-top: 5px;">Del. <fa-icon [icon]="fa_times" style="color: red;"></fa-icon></div>
+            <div class="delete-article" (click)="onDelete(id)">
+                <div class="delete" style="margin-top: 5px;">Del. <fa-icon [icon]="fa_times" style="color: red;"></fa-icon></div>
+            </div>
         </div>
     </div>
 </div>

@@ -3,7 +3,7 @@
         <a routerLink="/articles/edit/{{ article.id }}">
         <button type="button" class="btn btn-success">Edit</button>
         </a>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="onDelete(article.id)">Delete</button>
     </div>
 </div>
 

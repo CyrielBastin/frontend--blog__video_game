@@ -40,3 +40,11 @@ a {
 .control-panel {
     font-size: 20px;
 }
+
+.delete-article {
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

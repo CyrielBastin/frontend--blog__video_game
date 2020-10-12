@@ -37,4 +37,24 @@ export class ArticleService
         return this.http
                    .get<Array<Commentary>>(`${this.article_url}/${id}/commentaries/desc`)
     }
+
+    public saveArticle (article: Article)
+    {
+        if (article.id === 0)
+        {
+            /*
+            * To change
+            */
+            article.userId = 1
+            return this.http.post<Article>(`${this.article_url}/new`, article)
+        } else
+        {
+            return this.http.put<Article>(`${this.article_url}/update`, article)
+        }
+    }
+
+    public deleteArticle (id: number)
+    {
+        return this.http.delete(`${this.article_url}/delete/${id}`)
+    }
 }
