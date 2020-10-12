@@ -20,6 +20,7 @@ import { CommentarySectionComponent } from './commentary-section/commentary-sect
 import { UserService } from './services/user.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ArticleNewOrEditComponent } from './article-new-or-edit/article-new-or-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ArticleNewOrEditComponent } from './article-new-or-edit/article-new-or-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     FontAwesomeModule
   ],
   providers: [

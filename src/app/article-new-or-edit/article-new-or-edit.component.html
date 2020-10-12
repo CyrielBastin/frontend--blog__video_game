@@ -1,25 +1,73 @@
 <div class="container" style="margin-top: 40px;">
-    <form>
-    <div class="form-group">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <!-- Title of the article -->
+    <div *ngIf="display_title; else elseBlockOne" class="form-group">
         <label for="articleTitle">Title :</label>
-        <input type="text" class="form-control" id="articleTitle">
+        <input type="text" class="form-control" 
+               id="articleTitle" name="title" 
+               [ngModel]="article.title" required>
     </div>
-    <div class="form-group">
+    <ng-template #elseBlockOne>
+        <div class="form-group">
+            <label for="articleTitle">Title :</label>
+            <input type="text" class="form-control" 
+                id="articleTitle" name="title" 
+                ngModel required>
+        </div>
+    </ng-template>
+    <!-- `End of` Title of the article -->
+    <!-- Type of the article -->
+    <div *ngIf="display_type; else elseBlockTwo" class="form-group">
         <label for="articleType">Type :</label>
-        <select class="form-control" id="articleType">
-            <option *ngFor="let type of list_types;">{{ type.type }}</option>
+        <select class="form-control" id="articleType" 
+                name="type" [ngModel]="article_type" required>
+            <option *ngFor="let type of list_types;" value="{{ type.type }}">{{ type.type }}</option>
         </select>
     </div>
-    <div class="form-group">
+    <ng-template #elseBlockTwo>
+        <div class="form-group">
+            <label for="articleType">Type :</label>
+            <select class="form-control" id="articleType" 
+                    name="type" ngModel required>
+                <option *ngFor="let type of list_types;" value="{{ type.type }}">{{ type.type }}</option>
+            </select>
+        </div>
+    </ng-template>
+    <!-- `End of` Type of the article -->
+    <!-- Game of the article -->
+    <div *ngIf="display_game; else elseBlockThree" class="form-group">
         <label for="articleGame">Game :</label>
-        <select class="form-control" id="articleGame">
-            <option *ngFor="let game of list_games;">{{ game.name }}</option>
+        <select class="form-control" id="articleGame" 
+                name="game" [ngModel]="article_game" required>
+            <option *ngFor="let game of list_games;" value="{{ game.name }}">{{ game.name }}</option>
         </select>
     </div>
-    <div class="form-group">
+    <ng-template #elseBlockThree>
+        <div class="form-group">
+           <label for="articleGame">Game :</label>
+           <select class="form-control" id="articleGame" 
+                 name="game" ngModel required>
+              <option *ngFor="let game of list_games;" value="{{ game.name }}">{{ game.name }}</option>
+            </select>
+        </div>
+    </ng-template>
+    <!-- `End of` Game of the article -->
+    <!-- Content of the article -->
+    <div *ngIf="display_content; else elseBlockFour" class="form-group">
         <label for="articleContent">Content :</label>
-        <textarea class="form-control" id="articleContent" rows="7"></textarea>
+        <textarea class="form-control" id="articleContent" 
+                  rows="7" name="content" 
+                  [ngModel]="article.content" required></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <ng-template #elseBlockFour>
+        <div class="form-group">
+            <label for="articleContent">Content :</label>
+            <textarea class="form-control" id="articleContent" 
+                    rows="7" name="content" 
+                    ngModel required></textarea>
+        </div>
+    </ng-template>
+    <!-- `End of` Content of the article -->
+    <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
     </form>
 </div>
