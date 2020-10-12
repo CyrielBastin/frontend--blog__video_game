@@ -19,6 +19,7 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 import { CommentarySectionComponent } from './commentary-section/commentary-section.component';
 import { UserService } from './services/user.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ArticleNewOrEditComponent } from './article-new-or-edit/article-new-or-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ArticlesListComponent,
     ArticlesListArticleComponent,
     ArticleDetailsComponent,
-    CommentarySectionComponent
+    CommentarySectionComponent,
+    ArticleNewOrEditComponent
   ],
   imports: [
     BrowserModule,
