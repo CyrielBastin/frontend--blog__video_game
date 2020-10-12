@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Commentary } from '../model/commentary';
 import { ArticleService } from '../services/article.service';
+import { CommentaryService } from '../services/commentary.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -15,7 +18,9 @@ export class CommentarySectionComponent implements OnInit {
 
   constructor (
     private article_service: ArticleService,
-    private user_service: UserService
+    private user_service: UserService,
+    private commentary_service: CommentaryService,
+    private router: Router
   ) {}
 
   ngOnInit(): void
@@ -37,5 +42,23 @@ export class CommentarySectionComponent implements OnInit {
         (datas) => { comment['user'] = datas }
       )
     }
+  }
+
+  onFormSubmit (form: NgForm)
+  {
+    const commentary = new Commentary()
+    commentary.articleId = this.articleId
+    commentary.comment = form.value['user_comment']
+    commentary.postedAt = ""
+
+    this.commentary_service.saveCommentary(commentary)
+                           .subscribe(
+                             result => this.refreshPage()
+                            )
+  }
+
+  private refreshPage ()
+  {
+    this.router.navigate([`/refresh/${this.articleId}`])
   }
 }

@@ -67,6 +67,6 @@ export class ArticlesListArticleComponent implements OnInit {
 
   refreshArticles ()
   {
-    this.router.navigate(['/refresh'])
+    this.router.navigate(['/refresh/-1'])
   }
 }

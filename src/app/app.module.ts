@@ -22,6 +22,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ArticleNewOrEditComponent } from './article-new-or-edit/article-new-or-edit.component';
 import { FormsModule } from '@angular/forms';
 import { RefreshArticlesComponent } from './refresh-articles/refresh-articles.component';
+import { CommentaryService } from './services/commentary.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { RefreshArticlesComponent } from './refresh-articles/refresh-articles.co
     GenreService,
     PlatformService,
     VideoGameService,
-    UserService
+    UserService,
+    CommentaryService
   ],
   bootstrap: [AppComponent]
 })

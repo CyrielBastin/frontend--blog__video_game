@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'articles/:id', component: ArticleDetailsComponent },
   { path: 'articles/new/create', component: ArticleNewOrEditComponent },
   { path: 'articles/edit/:id', component: ArticleNewOrEditComponent },
-  { path: 'refresh', component: RefreshArticlesComponent },
+  { path: 'refresh/:id', component: RefreshArticlesComponent },
   { path: '', component: HomeContentComponent }
 ];
 

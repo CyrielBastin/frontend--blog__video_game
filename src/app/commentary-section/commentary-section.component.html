@@ -1,11 +1,14 @@
 <div class="container">
     <div class="grey-line"></div>
-        <form style="margin-bottom: 70px;">
+        <form style="margin-bottom: 70px;" (ngSubmit)="onFormSubmit(f)" #f="ngForm">
         <div class="form-group">
             <label for="commentInput">Leave a comment :</label>
-            <textarea name="user_comment" id="commentInput" cols="30" rows="3" class="form-control"></textarea>
+            <textarea name="user_comment" id="commentInput" 
+                      cols="30" rows="3" class="form-control"
+                      ngModel required>
+            </textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
         </form>
     <!-- User's commentaries -->
     <div *ngFor="let comment of list_commentaries;" class="media mb-5">
