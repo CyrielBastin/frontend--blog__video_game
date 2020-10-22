@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
 
   onFormSubmit (form: NgForm)
   {
-    this.user_service.login(form.value).subscribe(response => console.log(response.headers.keys()))
+    this.user_service.login(form.value).subscribe(response => console.log(response))
   }
 
   goToHome ()

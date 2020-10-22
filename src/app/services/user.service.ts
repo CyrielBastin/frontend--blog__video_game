@@ -29,6 +29,6 @@ export class UserService
     public login (userinfo)
     {
         return this.http
-                   .post(`${this.url}/login`, userinfo, { observe: 'response' })
+                   .post(`${this.url}/login`, userinfo, { responseType: "text" })
     }
 }
