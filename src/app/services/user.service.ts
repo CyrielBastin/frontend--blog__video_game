@@ -8,6 +8,7 @@ export class UserService
 {
     private port = 8080
     private user_url = `http://localhost:${this.port}/REST/users`
+    private url = `http://localhost:${this.port}`
 
     constructor (
         private http: HttpClient
@@ -17,5 +18,17 @@ export class UserService
     {
         return this.http
                    .get<User>(`${this.user_url}/${id}`)
+    }
+
+    public register (user: User)
+    {
+        return this.http
+                   .post<User>(`${this.url}/sign-up`, user)
+    }
+
+    public login (userinfo)
+    {
+        return this.http
+                   .post(`${this.url}/login`, userinfo, { observe: 'response' })
     }
 }

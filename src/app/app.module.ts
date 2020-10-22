@@ -23,6 +23,8 @@ import { ArticleNewOrEditComponent } from './article-new-or-edit/article-new-or-
 import { FormsModule } from '@angular/forms';
 import { RefreshArticlesComponent } from './refresh-articles/refresh-articles.component';
 import { CommentaryService } from './services/commentary.service';
+import { SignupPageComponent } from './signup-page/signup-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { CommentaryService } from './services/commentary.service';
     ArticleDetailsComponent,
     CommentarySectionComponent,
     ArticleNewOrEditComponent,
-    RefreshArticlesComponent
+    RefreshArticlesComponent,
+    SignupPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
