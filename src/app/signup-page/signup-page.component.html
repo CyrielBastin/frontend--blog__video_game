@@ -1,4 +1,7 @@
 <div class="container" style="margin-top: 60px;">
+<div *ngIf="signup_error" class="alert alert-danger">
+    This username already exists !
+</div>
 <form (submit)="onFormSubmit(f)" #f="ngForm">
     <div class="form-group">
         <label for="form-username">Username</label>

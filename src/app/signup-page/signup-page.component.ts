@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { error } from 'console';
 import { User } from '../model/user';
 import { UserService } from '../services/user.service';
 
@@ -10,6 +11,8 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./signup-page.component.scss']
 })
 export class SignupPageComponent implements OnInit {
+
+  signup_error = false
 
   constructor (
     private user_service: UserService,
@@ -22,9 +25,18 @@ export class SignupPageComponent implements OnInit {
 
   onFormSubmit (form: NgForm)
   {
+    this.user_service
+        .getOneByUsername(form.value['username'])
+        .subscribe(
+          (datas) => { this.signup_error = true }
+        )
     const user = this.user_service.createUserFromForm(form)
 
-    this.user_service.register(user).subscribe(response => this.goToHome())
+    this.user_service
+        .register(user)
+        .subscribe(
+          (response) => { this.goToHome() }
+        )
   }
 
   goToHome () {
