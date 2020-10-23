@@ -43,7 +43,8 @@ export class ArticleNewOrEditComponent implements OnInit {
       this.article_service
           .getOneById(this.id)
           .subscribe(
-            (datas) => { this.feedArticleAndFeedMembers(datas) }
+            (datas) => { this.feedArticleAndFeedMembers(datas) },
+            (error) => { this.router.navigate(['/error']) }
           )
     }
     
@@ -52,6 +53,8 @@ export class ArticleNewOrEditComponent implements OnInit {
 
   feedArticleAndFeedMembers (datas: Article)
   {
+    if (datas.id === 0) this.router.navigate(['/error'])
+
     this.article = datas
     this.display_title = true
     this.display_type = true
@@ -102,8 +105,7 @@ export class ArticleNewOrEditComponent implements OnInit {
         )
   }
 
-  // When submitting the form to add or edit an article
-  onSubmit (form: NgForm)
+  onFormSubmit (form: NgForm)
   {
     if (this.id !== undefined) {
       this.article_service.modifyArticleWithForm(this.article, form)

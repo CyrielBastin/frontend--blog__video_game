@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 40px;">
-    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <form (ngSubmit)="onFormSubmit(f)" #f="ngForm">
     <!-- Title of the article -->
     <div *ngIf="display_title; else elseBlockOne" class="form-group">
         <label for="articleTitle">Title :</label>

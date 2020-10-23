@@ -27,10 +27,13 @@ export class LoginPageComponent implements OnInit {
   {
     this.auth_service
         .login(form.value)
-        .subscribe(token => {
-          this.auth_service.saveUserInfos(token)
-          this.goToHome()
-        })
+        .subscribe(
+          (token) => {
+            this.auth_service.saveUserInfos(token)
+            this.goToHome() },
+          (error) => {
+            this.invalid_login = true
+          })
   }
 
   goToHome ()

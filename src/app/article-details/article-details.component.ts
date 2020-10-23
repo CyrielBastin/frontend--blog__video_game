@@ -32,9 +32,16 @@ export class ArticleDetailsComponent implements OnInit {
     this.article_service
         .getOneById(id)
         .subscribe(
-          (datas) => { this.article = datas }
+          (datas) => { this.setDatasOrError(datas) },
+          (error) => { this.router.navigate(['/error']) }
         )
     setTimeout(() => { this.fetchImageAndType() }, 100)
+  }
+
+  private setDatasOrError (data: Article)
+  {
+    if (data.id === 0) this.router.navigate(['/error'])
+    this.article = data
   }
 
   private fetchImageAndType ()
