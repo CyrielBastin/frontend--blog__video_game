@@ -26,6 +26,7 @@ import { CommentaryService } from './services/commentary.service';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { AuthService } from './services/auth.service';
     VideoGameService,
     UserService,
     CommentaryService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
