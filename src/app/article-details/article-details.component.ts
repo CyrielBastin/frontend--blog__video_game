@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Article } from '../model/article';
 import { ArticleTypeService } from '../services/article-type.service';
 import { ArticleService } from '../services/article.service';
+import { AuthService } from '../services/auth.service';
 import { VideoGameService } from '../services/video-game.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class ArticleDetailsComponent implements OnInit {
     private article_service: ArticleService,
     private article_type_service: ArticleTypeService,
     private video_game_service: VideoGameService,
-    private router: Router
+    private router: Router,
+    public auth_service: AuthService
   ) {}
 
   ngOnInit (): void

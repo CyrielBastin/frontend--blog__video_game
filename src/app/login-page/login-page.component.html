@@ -2,6 +2,9 @@
     <div class="row offset-5 login-txt" style="margin-bottom: 30px;">
         LOGIN
     </div>
+    <div *ngIf="invalid_login" class="alert alert-danger">
+        Invalid username and/or password !
+    </div>
 <form (submit)="onFormSubmit(f)" #f="ngForm">
     <div class="form-group">
         <label for="form-username">Username</label>

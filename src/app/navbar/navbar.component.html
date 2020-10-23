@@ -15,8 +15,11 @@
         <li class="nav-item margin-right-5">
           <a class="nav-link text-white" routerLink="sign-up">Sign Up</a>
         </li>
-        <li class="nav-item margin-right-5">
+        <li *ngIf="!auth_service.isLoggedIn()" class="nav-item margin-right-5">
           <a class="nav-link text-white" routerLink="login">Log In</a>
+        </li>
+        <li *ngIf="auth_service.isLoggedIn()" class="nav-item margin-right-5">
+          <a class="nav-link text-white" (click)="auth_service.logout()" style="cursor: pointer;">Log out</a>
         </li>
       </ul>
     </div>

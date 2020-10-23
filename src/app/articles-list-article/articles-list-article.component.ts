@@ -4,6 +4,7 @@ import { VideoGameService } from '../services/video-game.service';
 import { faPencilAlt, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { ArticleService } from '../services/article.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-articles-list-article',
@@ -30,7 +31,8 @@ export class ArticlesListArticleComponent implements OnInit {
     private video_game_service: VideoGameService,
     private article_type_service: ArticleTypeService,
     private article_service: ArticleService,
-    private router: Router
+    private router: Router,
+    public auth_service: AuthService
   ) {}
 
   ngOnInit (): void

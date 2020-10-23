@@ -1,6 +1,7 @@
 <div class="container">
     <div class="grey-line"></div>
-        <form style="margin-bottom: 70px;" (ngSubmit)="onFormSubmit(f)" #f="ngForm">
+        <form *ngIf="auth_service.isLoggedIn()" style="margin-bottom: 70px;" 
+                (ngSubmit)="onFormSubmit(f)" #f="ngForm">
         <div class="form-group">
             <label for="commentInput">Leave a comment :</label>
             <textarea name="user_comment" id="commentInput" 
@@ -10,6 +11,9 @@
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
         </form>
+        <div *ngIf="!auth_service.isLoggedIn()" class="alert alert-danger" style="margin-bottom: 70px;">
+            You must be Logged in to post a commenary !
+        </div>
     <!-- User's commentaries -->
     <div *ngFor="let comment of list_commentaries;" class="media mb-5">
         <img class="mr-3 px-60" src="../../assets/images/video_game/{{ comment['user']['avatar'] }}.jpg" alt="avatar's image">

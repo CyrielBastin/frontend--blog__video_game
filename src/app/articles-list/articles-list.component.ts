@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Article } from '../model/article';
 import { ArticleService } from '../services/article.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-articles-list',
@@ -12,7 +13,8 @@ export class ArticlesListComponent implements OnInit {
   list_articles: Array<Article>
 
   constructor (
-    private article_service: ArticleService
+    private article_service: ArticleService,
+    public auth_service: AuthService
   ) {}
 
   ngOnInit(): void

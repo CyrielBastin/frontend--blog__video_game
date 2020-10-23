@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { AuthService } from '../services/auth.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -10,9 +12,12 @@ import { UserService } from '../services/user.service';
 })
 export class LoginPageComponent implements OnInit {
 
+  invalid_login = false
+
   constructor (
-    private user_service: UserService,
-    private router: Router
+    private auth_service: AuthService,
+    private router: Router,
+    private user_service: UserService
   ) {}
 
   ngOnInit(): void
@@ -20,7 +25,12 @@ export class LoginPageComponent implements OnInit {
 
   onFormSubmit (form: NgForm)
   {
-    this.user_service.login(form.value).subscribe(response => console.log(response))
+    this.auth_service
+        .login(form.value)
+        .subscribe(token => {
+          this.auth_service.saveUserInfos(token)
+          this.goToHome()
+        })
   }
 
   goToHome ()

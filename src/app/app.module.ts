@@ -25,6 +25,7 @@ import { RefreshArticlesComponent } from './refresh-articles/refresh-articles.co
 import { CommentaryService } from './services/commentary.service';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
     PlatformService,
     VideoGameService,
     UserService,
-    CommentaryService
+    CommentaryService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Commentary } from '../model/commentary';
 import { ArticleService } from '../services/article.service';
+import { AuthService } from '../services/auth.service';
 import { CommentaryService } from '../services/commentary.service';
 import { UserService } from '../services/user.service';
 
@@ -20,7 +21,8 @@ export class CommentarySectionComponent implements OnInit {
     private article_service: ArticleService,
     private user_service: UserService,
     private commentary_service: CommentaryService,
-    private router: Router
+    private router: Router,
+    public auth_service: AuthService
   ) {}
 
   ngOnInit(): void

@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="btns-edit_and_del">
+    <div *ngIf="auth_service.isLoggedIn() && auth_service.getRole() == '9'" class="btns-edit_and_del">
         <a routerLink="/articles/edit/{{ article.id }}">
         <button type="button" class="btn btn-success">Edit</button>
         </a>

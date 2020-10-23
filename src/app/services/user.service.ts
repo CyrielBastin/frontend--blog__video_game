@@ -20,15 +20,15 @@ export class UserService
                    .get<User>(`${this.user_url}/${id}`)
     }
 
+    public getOneByUsername (username: string): Observable<User>
+    {
+        return this.http
+                   .get<User>(`${this.user_url}/name/${username}`)
+    }
+
     public register (user: User)
     {
         return this.http
                    .post<User>(`${this.url}/sign-up`, user)
-    }
-
-    public login (userinfo)
-    {
-        return this.http
-                   .post(`${this.url}/login`, userinfo, { responseType: "text" })
     }
 }
