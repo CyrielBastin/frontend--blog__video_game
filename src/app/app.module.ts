@@ -27,6 +27,7 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth.guard';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AuthGuard } from './services/auth.guard';
     ArticleNewOrEditComponent,
     RefreshArticlesComponent,
     SignupPageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,

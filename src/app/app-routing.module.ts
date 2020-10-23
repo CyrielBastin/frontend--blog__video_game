@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { ArticleNewOrEditComponent } from './article-new-or-edit/article-new-or-edit.component';
 import { ArticlesPageComponent } from './articles-page/articles-page.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 import { HomeContentComponent } from './home-content/home-content.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RefreshArticlesComponent } from './refresh-articles/refresh-articles.component';
@@ -17,7 +18,9 @@ const routes: Routes = [
   { path: 'sign-up', component: SignupPageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'refresh/:id', component: RefreshArticlesComponent },
-  { path: '', component: HomeContentComponent }
+  { path: '', component: HomeContentComponent },
+  { path: 'error', component: ErrorPageComponent },
+  { path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({
