@@ -14,11 +14,10 @@ export class CommentaryService
 
     saveCommentary (commentary: Commentary)
     {
-        /*
-         * To change !
-         */
         commentary.id = 0
-        commentary.userId = 1
-        return this.http.post<Commentary>(`${this.commentary_url}/new`, commentary)
+        commentary.userId = +localStorage.getItem('user_id')
+        return this.http.post<Commentary>(`${this.commentary_url}/new`, commentary, {
+            headers: { 'Authorization': localStorage.getItem('token') }
+        })
     }
 }

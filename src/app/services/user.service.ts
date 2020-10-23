@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { User } from '../model/user';
 
@@ -24,6 +25,19 @@ export class UserService
     {
         return this.http
                    .get<User>(`${this.user_url}/name/${username}`)
+    }
+
+    public createUserFromForm (form: NgForm): User
+    {
+        let user = new User()
+        user.id = 0
+        user.username = form.value['username']
+        user.password = form.value['password']
+        user.email = form.value['email']
+        user.avatar = form.value['avatar']
+        user.role = 1
+
+        return user
     }
 
     public register (user: User)

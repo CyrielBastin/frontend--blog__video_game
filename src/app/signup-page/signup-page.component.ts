@@ -22,13 +22,7 @@ export class SignupPageComponent implements OnInit {
 
   onFormSubmit (form: NgForm)
   {
-    let user = new User()
-    user.id = 0
-    user.username = form.value['username']
-    user.password = form.value['password']
-    user.email = form.value['email']
-    user.avatar = form.value['avatar']
-    user.role = 1
+    const user = this.user_service.createUserFromForm(form)
 
     this.user_service.register(user).subscribe(response => this.goToHome())
   }

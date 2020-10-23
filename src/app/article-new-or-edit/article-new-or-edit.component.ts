@@ -106,53 +106,15 @@ export class ArticleNewOrEditComponent implements OnInit {
   onSubmit (form: NgForm)
   {
     if (this.id !== undefined) {
-      this.article.title = form.value['title']
-      this.article.articleTypeId = this.convertTypeToId(form.value['type'])
-      this.article.videoGameId = this.convertGameToId(form.value['game'])
-      this.article.content = form.value['content']
+      this.article_service.modifyArticleWithForm(this.article, form)
 
-      //console.log(this.article)
       this.article_service.saveArticle(this.article).subscribe(result => this.goToArticles())
     } else {
-    let article = new Article()
-    article.id = 0
-    article.title = form.value['title']
-    article.articleTypeId = this.convertTypeToId(form.value['type'])
-    article.videoGameId = this.convertGameToId(form.value['game'])
-    article.content = form.value['content']
-    article.userId = 0
-    article.postedAt = ""
-
-    //console.log(article)
-    this.article_service.saveArticle(article).subscribe(result => this.goToArticles())
+      const article = this.article_service.createArticleFromForm(form)
+      this.article_service.saveArticle(article).subscribe(result => this.goToArticles())
     }
   }
 
-  private convertTypeToId (_type: string): number
-  {
-    switch (_type) {
-      case 'News': return 1
-      case 'Review': return 2
-      case 'Editorial': return 3
-      case 'Rumors': return 4
-    }
-  }
-
-  private convertGameToId (_game: string): number
-  {
-    switch (_game) {
-      case 'Hitman 2': return 1
-      case 'Bioshock': return 2
-      case 'Overwatch': return 3
-      case 'Diablo III: Reaper of Souls': return 4
-      case 'Diablo IV': return 5
-      case 'Far Cry 5': return 6
-      case 'Assassin\'s Creed Odyssey': return 7
-      case 'The Sims 4': return 8
-      case 'Battlefield 4': return 9
-      case 'Human: Fall Flat': return 10
-    }
-  }
 
   private goToArticles ()
   {
