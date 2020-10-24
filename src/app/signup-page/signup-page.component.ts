@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FormValidator } from '../services/form-validator.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -17,12 +18,15 @@ export class SignupPageComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void
-  {
-  }
+  ngOnInit(): void {}
 
   onFormSubmit (form: NgForm)
   {
+    if (!FormValidator.isSignUpFormValid(form)) {
+      this.signup_error = true
+      return
+    }
+
     this.user_service
         .getOneByUsername(form.value['username'])
         .subscribe(
