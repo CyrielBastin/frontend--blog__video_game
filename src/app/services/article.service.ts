@@ -52,7 +52,7 @@ export class ArticleService
         } else
         {
             console.log(article)
-            return this.http.put<Article>(`${this.article_url}/update`, article, httpOptions)
+            return this.http.post<Article>(`${this.article_url}/update`, article, httpOptions)
         }
     }
 
@@ -62,7 +62,7 @@ export class ArticleService
         const httpOptions = {
                 headers: new HttpHeaders({'Authorization': jwt_token, 'Access-Control-Allow-Origin': 'http://localhost:4200'})
         };
-        return this.http.delete(`${this.article_url}/delete/${id}`, httpOptions)
+        return this.http.get(`${this.article_url}/delete/${id}`, httpOptions)
     }
 
     public createArticleFromForm (form: NgForm): Article
